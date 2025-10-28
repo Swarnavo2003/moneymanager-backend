@@ -1,0 +1,25 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MoneymanagerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+    <envs>
+      <env name="BREVO_FROM_EMAIL" value="swarnavo2020@gmail.com" />
+      <env name="BREVO_HOST" value="smtp-relay.brevo.com" />
+      <env name="BREVO_PASSWORD" value="4PB7xytLCQERF2Wb" />
+      <env name="BREVO_PORT" value="587" />
+      <env name="BREVO_USERNAME" value="7b08ca001@smtp-brevo.com" />
+      <env name="DATABASE_PASSWORD" value="password" />
+      <env name="DATABASE_URL" value="jdbc:mysql://localhost:3306/moneymanager?useSSL=false&amp;allowPublicKeyRetrieval=true" />
+      <env name="DATABASE_USERNAME" value="root" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="in.swarnavo.moneymanager.MoneymanagerApplication" />
+    <module name="moneymanager" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="in.swarnavo.moneymanager.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

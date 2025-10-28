@@ -33,7 +33,6 @@ public class ProfileController {
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody AuthDTO authDTO) {
-        System.out.println(authDTO);
         try {
             if(!profileService.isAccountActive(authDTO.getEmail())) {
                 return ResponseEntity
