@@ -7,6 +7,7 @@ import in.swarnavo.moneymanager.entity.ProfileEntity;
 import in.swarnavo.moneymanager.repository.CategoryRepository;
 import in.swarnavo.moneymanager.repository.ExpenseRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.math3.analysis.function.Exp;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +71,12 @@ public class ExpenseService {
     public List<ExpenseDTO> filterExpenses(LocalDate startDate, LocalDate endDate, String keyword, Sort sort) {
         ProfileEntity profile = profileService.getCurrentProfile();
         List<ExpenseEntity> list = expenseRepository.findByProfileIdAndDateBetweenAndNameContainingIgnoreCase(profile.getId(), startDate, endDate, keyword, sort);
+        return list.stream().map(this::toDTO).toList();
+    }
+
+    // Notifications
+    public List<ExpenseDTO> getExpenseForUserOnDate(Long profileId, LocalDate date) {
+        List<ExpenseEntity> list = expenseRepository.findByProfileIdAndDate(profileId, date);
         return list.stream().map(this::toDTO).toList();
     }
 
